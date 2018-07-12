@@ -14,12 +14,4 @@ export class LoginPage {
   ionViewDidLoad() {
   }
 
-  goRegisterPage(){
-    this.navCtrl.push('RegisterPage');
-  }
-
-  logar(){
-    console.log("Logando");
-  }
-
 }

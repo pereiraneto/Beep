@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Login</ion-title>
   </ion-navbar>
 
@@ -10,20 +10,6 @@
 <ion-content padding>
   <img src="assets/imgs/logo.png" alt="Logo" class="logo">
 
-  <ion-card color="light">
-    <ion-card-content>
-      <ion-item color="light">
-        <ion-label floating>Email</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item color="light">
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-    </ion-card-content>
-    <ion-row>
-      <button ion-button color="custom" (click)="goRegisterPage()">Register</button>
-      <button ion-button color="secondary" (click)="logar()">Login</button>
-    </ion-row>
-  </ion-card>
+  <login-form></login-form>
+
 </ion-content>
