@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @IonicPage()
 @Component({
@@ -12,7 +13,7 @@ export class TabsPage {
   tab2root: string;
   tab3root: string;
 
-  constructor() {
+  constructor(private navCtrl: NavController) {
     this.tab1root = 'InboxPage';
     this.tab2root = 'ChannelsPage';
     this.tab3root = 'ProfilePage';

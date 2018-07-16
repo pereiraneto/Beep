@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input [(ngModel)]="user.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input [(ngModel)]="user.city" type="text"></ion-input>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+<button ion-button clear block (click)="saveProfile()">Save</button>

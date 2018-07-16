@@ -1,12 +1,24 @@
 <ion-card color="light">
   <ion-card-content>
     <ion-item color="light">
+      <ion-label floating>Avatar</ion-label>
+      <ion-input [(ngModel)]="account.avatar" type="file"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label floating>Name</ion-label>
+      <ion-input [(ngModel)]="account.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label floating>City</ion-label>
+      <ion-input [(ngModel)]="account.city" type="text"></ion-input>
+    </ion-item>
+    <ion-item color="light">
       <ion-label floating>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="account.email" type="email"></ion-input>
     </ion-item>
     <ion-item color="light">
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="account.password" type="password"></ion-input>
     </ion-item>
   </ion-card-content>
   <ion-row>
