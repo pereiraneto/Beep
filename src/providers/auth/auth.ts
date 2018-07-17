@@ -18,11 +18,9 @@ export class AuthProvider {
     // this.authUser$ = this.auth.createUser
   }
 
-  async createUser(account: User, user: UserInfo){
-    this.profileObject = this.database.object(`/profiles/${user.uid}`);
+  async createUser(account: User){
     try {
       const result = await this.auth.auth.createUserWithEmailAndPassword(account.email, account.password);
-      await this.profileObject.set(account);
       return true;
     } catch (e) {
       this.toast.create({
