@@ -1,18 +1,41 @@
-<ion-card color="light">
-  <ion-card-content>
-    <ion-item color="light">
-      <ion-label floating>Email</ion-label>
-      <ion-input [(ngModel)]="account.email" type="email"></ion-input>
-    </ion-item>
-    <ion-item color="light">
-      <ion-label floating>Password</ion-label>
-      <ion-input [(ngModel)]="account.password" type="password"></ion-input>
-    </ion-item>
-  </ion-card-content>
-  <ion-row class="login-form__">
-    <div>
-      <button ion-button color="custom" (click)="goRegisterPage()">Register</button>
-      <button ion-button color="secondary" (click)="logar()">Login</button>
-    </div>
-  </ion-row>
-</ion-card>
+<form #loginForm="ngForm" novalidate>
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-item color="light">
+        <ion-label floating>Email</ion-label>
+        <ion-input 
+        [(ngModel)]="account.email" 
+        type="email" 
+        name="email" 
+        #email="ngModel"
+        required
+        ></ion-input>
+      </ion-item>
+
+      <div padding *ngIf="email.invalid && email.dirty">
+        <span style="color: red;">Email adress is not valid.</span>
+      </div>
+
+      <ion-item color="light">
+        <ion-label floating>Password</ion-label>
+        <ion-input 
+        [(ngModel)]="account.password" 
+        type="password" 
+        name="password"
+        #password="ngModel"
+        required
+        ></ion-input>
+      </ion-item>
+
+      <div padding *ngIf="password.invalid && password.dirty">
+        <span style="color: red;">Password must be at least 6 characters.</span>
+      </div>
+    </ion-card-content>
+    <ion-row class="login-form__">
+      <div>
+        <button ion-button color="custom" (click)="goRegisterPage()">Register</button>
+        <button ion-button color="secondary" (click)="logar()" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </ion-row>
+  </ion-card>
+</form>
